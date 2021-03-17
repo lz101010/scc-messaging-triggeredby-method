@@ -1,0 +1,32 @@
+spring:
+  cloud.stream.bindings:
+    admin-out:
+      binder: rabbit
+      contentType: application/json
+      destination: notifications
+    clients-out:
+      binder: rabbit
+      contentType: application/json
+      destination: notifications
+    v2-admin-in:
+      binder: rabbit
+      contentType: application/json
+      destination: notifications
+    clients-in:
+      binder: rabbit
+      contentType: application/json
+      destination: notifications
+
+  cloud.stream.rabbit.bindings:
+    admin-out:
+      producer:
+        routingKeyExpression: "'admin'"
+    clients-out:
+      producer:
+        routingKeyExpression: "'clients'"
+    v2-admin-in:
+      consumer:
+        bindingRoutingKey: admin
+    clients-in:
+      consumer:
+        bindingRoutingKey: clients
