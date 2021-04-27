@@ -8,7 +8,7 @@ spring:
       binder: rabbit
       contentType: application/json
       destination: notifications
-    v2-admin-in:
+    admin-in:
       binder: rabbit
       contentType: application/json
       destination: notifications
@@ -24,7 +24,7 @@ spring:
     clients-out:
       producer:
         routingKeyExpression: "'clients'"
-    v2-admin-in:
+    admin-in:
       consumer:
         bindingRoutingKey: admin
     clients-in:

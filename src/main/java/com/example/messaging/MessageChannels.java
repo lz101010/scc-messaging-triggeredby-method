@@ -6,9 +6,7 @@ import org.springframework.messaging.MessageChannel;
 
 public interface MessageChannels {
 
-    // no idea why the 'v2-' prefix is needed for the channel to be created
-    // when running the contract tests
-    public static final String ADMIN_IN = "v2-admin-in";
+    public static final String ADMIN_IN = "admin-in";
     public static final String ADMIN_OUT = "admin-out";
 
     public static final String CLIENTS_IN = "clients-in";
