@@ -5,12 +5,12 @@ buildscript {
 		mavenCentral()
 	}
 	dependencies {
-		classpath 'org.springframework.cloud:spring-cloud-contract-gradle-plugin:3.0.1'
+		classpath 'org.springframework.cloud:spring-cloud-contract-gradle-plugin:2.2.7.RELEASE'
 	}
 }
 
 plugins {
-	id 'org.springframework.boot' version '2.4.3'
+	id 'org.springframework.boot' version '2.3.10.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 }
@@ -32,12 +32,12 @@ repositories {
 }
 
 ext {
-	set('springCloudVersion', "2020.0.1")
+	set('springCloudVersion', "Hoxton.SR11")
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-amqp'
-	implementation 'org.springframework.cloud:spring-cloud-stream'
+	implementation 'org.springframework.cloud:spring-cloud-stream:3.0.12.RELEASE'
 	implementation 'org.springframework.cloud:spring-cloud-stream-binder-rabbit'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
@@ -57,10 +57,6 @@ contracts {
 	baseClassMappings {
 		baseClassMapping('.*messaging.*', 'com.example.messaging.NotificationBase')
 	}
-}
-
-contractTest {
-	useJUnitPlatform()
 }
 
 test {
